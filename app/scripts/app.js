@@ -29,7 +29,7 @@ angular
         controller: 'CategoryCtrl',
         controllerAs: 'category'
       })
-      .when('/search', {
+      .when('/search/:searchName?', {
         templateUrl: 'views/search.html',
         controller: 'SearchCtrl',
         controllerAs: 'search'
