@@ -1,0 +1,25 @@
+h1, h2, h3, h4 {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    margin-top: 15px;
+    font-weight: 100;
+    text-transform: uppercase;
+
+    a {
+        color: $primaryColor;
+        text-decoration: none;
+    }
+
+}
+
+h2 {
+    margin-top: 5px;
+    font-weight: 100;
+    font-size: 1.8rem;
+}
+
+.font-bold {
+  font-weight: 900;
+}
