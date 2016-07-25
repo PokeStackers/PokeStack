@@ -10,4 +10,13 @@
     -o-transition: background-color 500ms linear;
     -ms-transition: background-color 500ms linear;
     transition: background-color 500ms linear;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 2rem;
+
+    &:hover, &:active, &:focus {
+      background-color: $gray;
+      color: #fff;
+      text-decoration: none;
+    }
 }
