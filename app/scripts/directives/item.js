@@ -11,8 +11,9 @@ angular.module('pokestackApp')
     return {
       templateUrl: 'views/shared/item.html',
       restrict: 'E',
+      scope: {site: '='},
       link: function postLink(scope, element, attrs) {
-
+        
       }
     };
   });
