@@ -6,13 +6,13 @@
   </div>
   <div class="col-sm-9 col-xs-12">
     <div class="content">
-      <h3 class="title"><a href="https://www.drivy.com" target="_blank">Drivy</a></h3>
-      <div class="description">Rent your car when you don't use it or rent one from your neighbor to go on holiday.</div>
+      <h3 class="title"><a href="https://www.drivy.com" target="_blank">{{ site.name }}</a></h3>
+      <div class="description">{{ site.description }}</div>
       <div class="row">
         <div class="col-xs-8">
-                                <span class="label label-info">EU</span>                                      </div>
+                                <span class="label label-info" ng-repeat="tag in site.tags">{{ tag }}</span>                                      </div>
         <div class="col-xs-4">
-          <a href="/car/drivy" class="more">Read more <i class="glyphicon glyphicon-chevron-right"></i></a>
+          <a href="{{ site.url }}" class="more">Read more <i class="glyphicon glyphicon-chevron-right"></i></a>
         </div>
       </div>
     </div>
