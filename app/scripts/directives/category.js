@@ -9,10 +9,10 @@
 angular.module('pokestackApp')
   .directive('category', function () {
     return {
-      template: '<div></div>',
+      templateUrl: 'views/shared/tile.html',
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
-        element.text('this is the category directive');
+        var test = 0;
       }
     };
   });
