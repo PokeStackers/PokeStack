@@ -38,5 +38,8 @@
   },
   "scripts": {
     "test": "grunt test"
+  },
+  "dependencies": {
+    "elasticsearch": "^11.0.1"
   }
 }
