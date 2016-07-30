@@ -7,22 +7,15 @@
  * # CategoryCtrl
  * Controller of the pokestackApp
  */
-// angular.module('pokestackApp')
-//   .controller('CategoryCtrl', function () {
-//     this.awesomeThings = [
-//       'HTML5 Boilerplate',
-//       'AngularJS',
-//       'Karma'
-//     ];
-//   });  
 
 angular.module('pokestackApp')
-  .controller('CategoryCtrl', ['$scope', 'searchService', 'esFactory', function ($scope, searchService, esFactory) {
-		console.log("Elastic");
+  .controller('CategoryCtrl', ['$route', '$scope', 'searchService', 'esFactory', function ($route, $scope, searchService, esFactory) {
+      console.log($route);
       searchService.search({
 	    index: 'pokestack',
+      //Dynamically change the query based on the category
+      type: $route.current.params.categoryName,
 	    body: {
-	      size:"50",
 	      sort: { "name": { order: "asc" }},   
 	      query: {
 	          match_all : {}
@@ -33,6 +26,24 @@ angular.module('pokestackApp')
         $scope.clusterState = resp;
         console.log(resp);
         $scope.error = null;
+
+        //for(i in resp.hits.hits)
+        $scope.results = [
+          {
+            name: resp.hits.hits[0]._source.name,
+            tags: resp.hits.hits[0]._source.tags,
+            description: resp.hits.hits[0]._source.description,
+            url: resp.hits.hits[0]._source.url,
+          },
+          {
+            name: 'Sandoche',
+            tags: ['tag1'],
+            description: 'Cool site',
+            url: 'http://sandoche.com'
+          }
+        ];        
+
+
       })
       .catch(function (err) {
         $scope.clusterState = null;
@@ -45,20 +56,5 @@ angular.module('pokestackApp')
             'Make sure that it is running and listening at http://pokestack-paschalis.rhcloud.com/');
         }
       });
-
-      $scope.results = [
-      {
-        name: 'PokemonGO',
-        tags: ['tag1', 'tag2'],
-        description: 'Cool app',
-        url: 'http://google.com'
-      },
-      {
-        name: 'Sandoche',
-        tags: ['tag1'],
-        description: 'Cool site',
-        url: 'http://sandoche.com'
-      }
-    ];
 
 }]);
