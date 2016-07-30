@@ -12,7 +12,8 @@ angular.module('pokestackApp')
       templateUrl: 'views/shared/tile.html',
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
-        var test = 0;
+        scope.name = attrs.name;
+        scope.link = '#/' + attrs.name.toLowerCase().replace(/ /g,"_");
       }
     };
   });

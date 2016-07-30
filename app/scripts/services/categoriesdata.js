@@ -8,4 +8,11 @@
  * Value in the pokestackApp.
  */
 angular.module('pokestackApp')
-  .value('categoriesData.js', 42);
+  .value('categoriesData', [
+    'Youtube channels',
+    'Twitch streams',
+    'Guides',
+    'Bots',
+    'Server status',
+    'Communities',
+  ]);
