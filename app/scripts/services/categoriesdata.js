@@ -9,10 +9,16 @@
  */
 angular.module('pokestackApp')
   .value('categoriesData', [
-    'Youtube channels',
-    'Twitch streams',
-    'Guides',
-    'Bots',
-    'Server status',
-    'Communities',
+    'youtube',
+    'twitch',
+    'guides',
+    'bots',
+    'serverstatus',
+    'communities',
+    'maps',
+    'marketplace',
+    'apis',
+    'dating',
+    'mobileapps',
+    
   ]);
