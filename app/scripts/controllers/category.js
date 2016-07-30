@@ -45,4 +45,20 @@ angular.module('pokestackApp')
             'Make sure that it is running and listening at http://pokestack-paschalis.rhcloud.com/');
         }
       });
-    }]);
+
+      $scope.results = [
+      {
+        name: 'PokemonGO',
+        tags: ['tag1', 'tag2'],
+        description: 'Cool app',
+        url: 'http://google.com'
+      },
+      {
+        name: 'Sandoche',
+        tags: ['tag1'],
+        description: 'Cool site',
+        url: 'http://sandoche.com'
+      }
+    ];
+
+}]);

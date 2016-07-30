@@ -9,10 +9,11 @@
 angular.module('pokestackApp')
   .directive('item', function () {
     return {
-      template: '<div></div>',
+      templateUrl: 'views/shared/item.html',
       restrict: 'E',
+      scope: {site: '='},
       link: function postLink(scope, element, attrs) {
-        element.text('this is the item directive');
+        
       }
     };
   });

@@ -8,10 +8,8 @@
  * Controller of the pokestackApp
  */
 angular.module('pokestackApp')
-  .controller('HomeCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('HomeCtrl', ['$scope', 'categoriesData', function ($scope, categoriesData) {
+
+    $scope.categories = categoriesData;
+
+  }]);
