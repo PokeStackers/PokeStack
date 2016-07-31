@@ -11,7 +11,6 @@ angular.module('pokestackApp')
   .value('categoriesData', [
     'youtube',
     'twitch',
-    'guides',
     'bots',
     'serverstatus',
     'communities',
