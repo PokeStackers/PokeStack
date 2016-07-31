@@ -34,7 +34,8 @@ angular.module('pokestackApp')
               name: resp.hits.hits[i]._source.name,
               tags: resp.hits.hits[i]._source.tags,
               description: resp.hits.hits[i]._source.description,
-              url: resp.hits.hits[i]._source.url
+              url: resp.hits.hits[i]._source.url,
+              image: resp.hits.hits[i]._source.imageurl
             }
           );
         } 

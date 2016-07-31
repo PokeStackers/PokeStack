@@ -11,7 +11,7 @@ angular.module('pokestackApp')
   .service('searchService', function (esFactory) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     return esFactory({
-	    host: 'http://pokestack-paschalis.rhcloud.com/',
+	    host: 'Enter elasticsearch host name',
 	    apiVersion: '1.7',
         log: 'trace'
     });
