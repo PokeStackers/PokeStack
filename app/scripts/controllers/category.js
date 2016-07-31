@@ -26,22 +26,18 @@ angular.module('pokestackApp')
         $scope.clusterState = resp;
         console.log(resp);
         $scope.error = null;
-
-        //for(i in resp.hits.hits)
-        $scope.results = [
-          {
-            name: resp.hits.hits[0]._source.name,
-            tags: resp.hits.hits[0]._source.tags,
-            description: resp.hits.hits[0]._source.description,
-            url: resp.hits.hits[0]._source.url,
-          },
-          {
-            name: 'Sandoche',
-            tags: ['tag1'],
-            description: 'Cool site',
-            url: 'http://sandoche.com'
-          }
-        ];        
+        //Populate the category with the entries from elasticsearch
+        $scope.results= [];
+        for(var i in resp.hits.hits){
+          $scope.results.push(
+            {
+              name: resp.hits.hits[i]._source.name,
+              tags: resp.hits.hits[i]._source.tags,
+              description: resp.hits.hits[i]._source.description,
+              url: resp.hits.hits[i]._source.url
+            }
+          );
+        } 
 
 
       })
@@ -53,7 +49,7 @@ angular.module('pokestackApp')
         // message
         if (err instanceof esFactory.errors.NoConnections) {
           $scope.error = new Error('Unable to connect to elasticsearch. ' +
-            'Make sure that it is running and listening at http://pokestack-paschalis.rhcloud.com/');
+            'Make sure that it is running');
         }
       });
 
