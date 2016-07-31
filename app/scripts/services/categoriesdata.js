@@ -16,9 +16,9 @@ angular.module('pokestackApp')
     'serverstatus',
     'communities',
     'maps',
-    'marketplace',
-    'apis',
+    'marketplaces',
+    'opensource',
     'dating',
     'mobileapps',
-    
+    'tools'
   ]);
