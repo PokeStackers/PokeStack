@@ -25,15 +25,15 @@ angular
         controller: 'HomeCtrl',
         controllerAs: 'home'
       })
-      .when('/:categoryName', {
-        templateUrl: 'views/category.html',
-        controller: 'CategoryCtrl',
-        controllerAs: 'category'
-      })
       .when('/search/:searchName?', {
         templateUrl: 'views/search.html',
         controller: 'SearchCtrl',
         controllerAs: 'search'
+      })
+      .when('/:categoryName', {
+        templateUrl: 'views/category.html',
+        controller: 'CategoryCtrl',
+        controllerAs: 'category'
       })
       .otherwise({
         redirectTo: '/'

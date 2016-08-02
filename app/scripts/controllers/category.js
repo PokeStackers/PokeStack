@@ -10,7 +10,6 @@
 
 angular.module('pokestackApp')
   .controller('CategoryCtrl', ['$route', '$scope', 'searchService', 'esFactory', function ($route, $scope, searchService, esFactory) {
-      console.log($route);
       searchService.search({
 	    index: 'pokestack',
       //Dynamically change the query based on the category
