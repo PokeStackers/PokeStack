@@ -1,0 +1,26 @@
+.search {
+
+  margin-top: 30px;
+  margin-bottom: 40px;
+
+  input {
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+    &:focus {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      border-color: $primaryColor;
+    }
+  }
+
+  .input-group-addon {
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    background-color: #ffffff;
+  }
+}
