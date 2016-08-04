@@ -25,6 +25,11 @@ angular
         controller: 'HomeCtrl',
         controllerAs: 'home'
       })
+      .when('/about', {
+        templateUrl: 'views/about.html',
+        controller: 'AboutCtrl',
+        controllerAs: 'about'
+      })
       .when('/search/:searchName?', {
         templateUrl: 'views/search.html',
         controller: 'SearchCtrl',
