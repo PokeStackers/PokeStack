@@ -13,6 +13,7 @@ angular.module('pokestackApp')
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
         scope.name = attrs.name;
+        scope.class = "fa fa-2x icon " + attrs.icon;
         scope.link = '#/' + attrs.name.toLowerCase().replace(/ /g,"_");
       }
     };
