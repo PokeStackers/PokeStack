@@ -10,18 +10,21 @@
 
 angular.module('pokestackApp')
   .controller('CategoryCtrl', ['$route', '$scope', 'searchService', 'esFactory', function ($route, $scope, searchService, esFactory) {
+
+
+      $scope.loading = true;
+
       searchService.search({
 	    index: 'pokestack',
       //Dynamically change the query based on the category
       type: $route.current.params.categoryName,
 	    body: {
-	      sort: { "name": { order: "asc" }},   
+	      sort: { "name": { order: "asc" }},
 	      query: {
 	          match_all : {}
 	      }
 	    }
-	})
-      .then(function (resp) {
+	    }).then(function (resp) {
         $scope.clusterState = resp;
         console.log(resp);
         $scope.error = null;
@@ -37,9 +40,9 @@ angular.module('pokestackApp')
               image: resp.hits.hits[i]._source.imageurl
             }
           );
-        } 
+        }
 
-
+        $scope.loading = false;
       })
       .catch(function (err) {
         $scope.clusterState = null;
@@ -51,6 +54,8 @@ angular.module('pokestackApp')
           $scope.error = new Error('Unable to connect to elasticsearch. ' +
             'Make sure that it is running');
         }
+
+        $scope.loading = false
       });
 
 }]);

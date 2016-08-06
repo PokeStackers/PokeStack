@@ -9,7 +9,11 @@
  */
 angular.module('pokestackApp')
   .controller('SearchCtrl', ['$route', '$scope', 'searchService', 'esFactory', function ($route, $scope, searchService, esFactory) {
-  	if($route.current.params.searchName){
+
+    $scope.loading = true;
+
+    if($route.current.params.searchName){
+      
 		searchService.search({
 		    index: 'pokestack',
 		    body: {
@@ -22,8 +26,7 @@ angular.module('pokestackApp')
 		            }
 		      	}
 	      	}
-		})
-	      .then(function (resp) {
+		}).then(function (resp) {
 	        $scope.clusterState = resp;
 	        console.log(resp);
 	        $scope.error = null;
@@ -38,8 +41,9 @@ angular.module('pokestackApp')
 	              image: resp.hits.hits[i]._source.imageurl
 	            }
 	          );
-	        } 
+	        }
 
+          $scope.loading = false;
 
 	      })
 	      .catch(function (err) {
@@ -53,7 +57,9 @@ angular.module('pokestackApp')
 	            'Make sure that it is running');
 	        }
 	      });
-  	} 
+
+        $scope.loading = false;
+  	}
   	/* else{
 		//TODO Show the categories of the home page as there is no character in the search form
   	}*/
