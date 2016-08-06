@@ -10,7 +10,7 @@
       <div class="description">{{ site.description }}</div>
       <div class="row">
         <div class="col-xs-8">
-                                <span class="label label-info" ng-repeat="tag in site.tags">{{ tag }}</span>                                      </div>
+          <span class="label label-info" ng-repeat="tag in site.tags" ng-click="search(tag)">{{ tag }}</span>                                      </div>
         <div class="col-xs-4 text-right">
           <a href="{{ site.url }}" class="more">Visit website <i class="glyphicon glyphicon-chevron-right"></i></a>
         </div>
