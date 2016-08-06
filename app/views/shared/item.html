@@ -3,7 +3,8 @@
     <a href="{{ site.url }}" target="_blank">
       <div class="image-container">
         <div class="image-content">
-          <img ng-src="{{ site.image }}" class="img-responsive logo-site">
+          <img ng-src="{{ site.image }}" class="img-responsive logo-site" ng-if="site.image">
+          <img ng-src="images/placeholder.png" class="img-responsive logo-site" ng-if="!site.image">
         </div>
       </div>
     </a>
