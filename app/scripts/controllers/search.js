@@ -56,11 +56,11 @@ angular.module('pokestackApp')
 	          $scope.error = new Error('Unable to connect to elasticsearch. ' +
 	            'Make sure that it is running');
 	        }
+	        $scope.loading = false;
 	      });
-
-        $scope.loading = false;
   	}
-  	/* else{
+  	else{
 		//TODO Show the categories of the home page as there is no character in the search form
-  	}*/
+		$scope.loading = false;
+  	}
 }]);
