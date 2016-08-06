@@ -20,5 +20,5 @@ angular.module('pokestackApp')
     { name:'dating', icon:'fa-heart'},
     { name:'mobileapps', icon:'fa-mobile-phone'},
     { name:'tools', icon:'fa-cog'},
-    { name:'miscellaneous', icon:'fa-cog'}
+    { name:'miscellaneous', icon:'fa-archive'}
   ]);
