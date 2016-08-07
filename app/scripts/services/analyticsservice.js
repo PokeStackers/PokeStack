@@ -9,5 +9,8 @@
  */
 angular.module('pokestackApp')
   .service('analyticsService', function () {
-    // AngularJS will instantiate a singleton by calling "new" on this function
+    this.recordPageview = function(url) {
+      ga('set', 'page', url);
+      ga('send', 'pageview');
+    };
   });
