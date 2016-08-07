@@ -70,3 +70,12 @@
   80% { top: -20px }
   100% { top: 0 }
 }
+
+.no-results{
+  position: absolute;
+  left: 50%;
+  bottom: 30%;
+  transform: translate(-50%,-50%);
+  color: $gray-light;
+  font-size: $font-size-large;
+}
