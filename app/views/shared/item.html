@@ -1,0 +1,26 @@
+<div class="row item">
+  <div class="col-sm-2 col-xs-12">
+    <a href="{{ site.url }}" target="_blank">
+      <div class="image-container">
+        <div class="image-content">
+          <img ng-src="{{ site.image }}" class="img-responsive logo-site" ng-if="site.image">
+          <img ng-src="images/placeholder.png" class="img-responsive logo-site" ng-if="!site.image">
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="col-sm-10 col-xs-12">
+    <div class="content">
+      <h3 class="title"><a href="{{ site.url }}" target="_blank">{{ site.name }}</a></h3>
+      <div class="description">{{ site.description }}</div>
+      <div class="row margin-top-sm">
+        <div class="col-xs-8">
+          <span class="label label-info" ng-repeat="tag in site.tags" ng-click="search(tag)">{{ tag }}</span>                                      </div>
+        <div class="col-xs-4 text-right">
+          <a href="{{ site.url }}" class="more">Visit website <i class="glyphicon glyphicon-chevron-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>

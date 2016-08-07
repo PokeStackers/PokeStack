@@ -1,0 +1,19 @@
+<div class="category-name">
+  <div class="container">
+    <div class="col-xs-3">
+      <h2><a href="#/"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="hidden-xs">Home</span></a></h2>
+    </div>
+    <div class="col-xs-6">
+      <h2 class="text-center">{{ categoryName }} <i class="{{ class }}" aria-hidden="true"></i></h2>
+    </div>
+
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="list-view col-sm-12">
+      <ng-include src="'views/shared/loading.html'" ng-if="loading"></ng-include>
+      <item class="item-element" ng-repeat="result in results" site="result"></item>
+    </div>
+  </div>
+</div>

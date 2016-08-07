@@ -1,0 +1,90 @@
+.item{
+  margin-bottom: 15px;
+}
+
+.item .content .title{
+  margin: 0px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+.item .content .title a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.item .content .description{
+  color: grey;
+  margin-bottom: 5px;
+}
+
+.item .content a.more{
+  color: grey;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.label {
+  margin-right: 5px;
+  cursor:pointer;
+}
+
+
+@media (max-width: 768px){
+  .main-title{
+    text-align: center;
+  }
+
+  .item .col-xs-12{
+    text-align: center;
+  }
+
+  .logo-site{
+      width: 160px;
+      display: inline-block;
+      margin-bottom: 5px;
+  }
+}
+
+.image-content{
+	position:  absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+
+  img {
+      max-height: 100%;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      padding:2px;
+  }
+
+}
+
+
+.image-container {
+  border: 1px solid $gray-lighter;
+	position: relative;
+	width: 100%;		/* desired width */
+}
+.image-container:before{
+	content: "";
+	display: block;
+	padding-top: 100%; 	/* initial ratio of 1:1*/
+}
+
+
+.item-element:last-child {
+  hr {
+    display: none;
+  }
+}
