@@ -2,7 +2,6 @@
   margin-bottom: 15px;
 }
 
-
 .item .content .title{
   margin: 0px;
   margin-bottom: 5px;
@@ -81,4 +80,11 @@
 	content: "";
 	display: block;
 	padding-top: 100%; 	/* initial ratio of 1:1*/
+}
+
+
+.item-element:last-child {
+  hr {
+    display: none;
+  }
 }
