@@ -8,11 +8,12 @@
  * Service in the pokestackApp.
  */
 angular.module('pokestackApp')
-  .service('elasticService', ['$route', '$scope', '$filter', 'categoriesData', 'searchService', 'esFactory', function ($route, $scope, $filter, categoriesData, searchService, esFactory) {
+  .service('elasticService', ['$rootScope','$q',  'searchService', 'esFactory', function ($rootScope, $q, searchService, esFactory) {
 
   	var search = {
 
       	populate: function (category){
+      		var deferred = $q.defer();
 	      	searchService.search({
 			    index: 'pokestack',
 			    //Dynamically change the query based on the category
@@ -24,13 +25,11 @@ angular.module('pokestackApp')
 		    		}
 		    	}
 		    }).then(function (resp) {
-		      	$scope.clusterState = resp;
-		      	console.log(resp);
-		        	$scope.error = null;
-		        	//Populate the category with the entries from elasticsearch
-		        	$scope.results= [];
-		        	for(var i in resp.hits.hits){
-		          	$scope.results.push(
+		       	//Populate the category with the entries from elasticsearch
+		        var results= [];
+		        for(var i in resp.hits.hits){
+
+		          	results.push(
 		            {
 		              	name: resp.hits.hits[i]._source.name,
 		              	tags: resp.hits.hits[i]._source.tags,
@@ -38,27 +37,19 @@ angular.module('pokestackApp')
 		              	url: resp.hits.hits[i]._source.url,
 		              	image: resp.hits.hits[i]._source.imageurl
 		            }
-		          );
+		          	);
 		        }
+		        deferred.resolve(results);
 
-		        $scope.loading = false;
 		    }).catch(function (err) {
-		        $scope.clusterState = null;
-		        $scope.error = err;
-		        // if the err is a NoConnections error, then the client was not able to
-		        // connect to elasticsearch. In that case, create a more detailed error
-		        // message
-		        if (err instanceof esFactory.errors.NoConnections) {
-		          $scope.error = new Error('Unable to connect to elasticsearch. ' +
-		            'Make sure that it is running');
-		        }
-
-		        $scope.loading = false
+		        deferred.resolve(err);
 		    });
+
+		    return deferred.promise;
 		},
 
 		search: function(searchterm){
-
+			var deferred = $q.defer();
 			searchService.search({
 			    index: 'pokestack',
 			    body: {
@@ -72,12 +63,9 @@ angular.module('pokestackApp')
 			      	}
 		      	}
 			}).then(function (resp) {
-		        $scope.clusterState = resp;
-		        console.log(resp);
-		        $scope.error = null;
-		        $scope.results= [];
+		        var results= [];
 		        for(var i in resp.hits.hits){
-		          $scope.results.push(
+		          results.push(
 		            {
 		              name: resp.hits.hits[i]._source.name,
 		              tags: resp.hits.hits[i]._source.tags,
@@ -88,21 +76,14 @@ angular.module('pokestackApp')
 		          );
 		        }
 
-	          $scope.loading = false;
+	          deferred.resolve(results);
 
 		      })
 		      .catch(function (err) {
-		        $scope.clusterState = null;
-		        $scope.error = err;
-		        // if the err is a NoConnections error, then the client was not able to
-		        // connect to elasticsearch. In that case, create a more detailed error
-		        // message
-		        if (err instanceof esFactory.errors.NoConnections) {
-		          $scope.error = new Error('Unable to connect to elasticsearch. ' +
-		            'Make sure that it is running');
-		        }
-		        $scope.loading = false;
+		        deferred.resolve(err);
 		      });
+
+		      return deferred.promise;
 		}
   
     }
