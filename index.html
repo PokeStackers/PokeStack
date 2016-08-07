@@ -1,44 +1,11 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>PokeStack</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-    <script src="https://use.fontawesome.com/b8df798ef0.js"></script>
-    <script>
-      !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+<!doctype html> <html> <head> <meta charset="utf-8"> <title>PokeStack</title> <meta name="description" content=""> <meta name="viewport" content="width=device-width"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="stylesheet" href="styles/main.65a599c3.css"> <script src="https://use.fontawesome.com/b8df798ef0.js"></script> <script>!function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-82095625-1', 'auto');
-   </script>
-
-   <script src="//load.sumome.com/" data-sumo-site-id="dbb99730921feffd6ca3940ea6e8f4d0b74918baf523862f343b473a00a5da47" async="async"></script>
-  </head>
-  <body ng-app="pokestackApp">
-    <!--[if lte IE 8]>
+      ga('create', 'UA-82095625-1', 'auto');</script> <script src="//load.sumome.com/" data-sumo-site-id="dbb99730921feffd6ca3940ea6e8f4d0b74918baf523862f343b473a00a5da47" async></script> </head> <body ng-app="pokestackApp"> <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-    <ng-include src="'views/shared/header.html'"></ng-include>
-    <search></search>
-    <hr>
-    <div ng-view=""></div>
-    <ng-include src="'views/shared/footer.html'"></ng-include>
-    <ng-include src="'views/shared/modal.html'"></ng-include>
-
-    <script type="text/javascript">
-        window.doorbellOptions = {
+    <![endif]--> <ng-include src="'views/shared/header.html'"></ng-include> <search></search> <hr> <div ng-view=""></div> <ng-include src="'views/shared/footer.html'"></ng-include> <ng-include src="'views/shared/modal.html'"></ng-include> <script type="text/javascript">window.doorbellOptions = {
             appKey: '3DwtBm3M2fCF9rjRPl1hUR2YzLJxJp2dZYGvxfatTYfjuHtspEmAMzmJyVvfEGsh'
         };
         (function(w, d, t) {
@@ -51,37 +18,4 @@
       function showDoorbellModal() {
         doorbell.show();
         return false;
-      }
-    </script>
-
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/elasticsearch/elasticsearch.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/category.js"></script>
-        <script src="scripts/controllers/home.js"></script>
-        <script src="scripts/controllers/search.js"></script>
-        <script src="scripts/directives/category.js"></script>
-        <script src="scripts/directives/item.js"></script>
-        <script src="scripts/services/analyticsservice.js"></script>
-        <script src="scripts/services/searchservice.js"></script>
-        <script src="scripts/services/categoriesdata.js"></script>
-        <script src="scripts/directives/search.js"></script>
-        <script src="scripts/filters/icon.js"></script>
-        <!-- endbuild -->
-</body>
-</html>
+      }</script> <script src="scripts/vendor.d2fe2d1b.js"></script> <script src="scripts/scripts.d16b7315.js"></script> </body> </html>
