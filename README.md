@@ -5,7 +5,7 @@ version 0.15.1.
 
 ## Build & development
 
-Manually change '<script src="bower_components/elasticsearch/elasticsearch.js"></script>' to '<script src="bower_components/elasticsearch/elasticsearch.angular.js"></script>' in index.html in case bower added the former.
+Manually change '<script src="bower_components/elasticsearch/elasticsearch.js">' to '<script src="bower_components/elasticsearch/elasticsearch.angular.js">' in index.html in case bower added the former.
 
 Change the info of your ElasticSearch server in services/searchsearvice.js.
 
