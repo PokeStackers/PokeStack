@@ -16,16 +16,16 @@ angular.module('pokestackApp')
       $scope.class = "fa " + $filter('icon')(categoriesData, $scope.categoryName);
 
       searchService.search({
-	    index: 'pokestack',
+      index: 'pokestack',
       //Dynamically change the query based on the category
       type: $route.current.params.categoryName,
-	    body: {
-	      sort: { "name": { order: "asc" }},
-	      query: {
-	          match_all : {}
-	      }
-	    }
-	    }).then(function (resp) {
+      body: {
+        sort: { "name": { order: "asc" }},
+        query: {
+            match_all : {}
+        }
+      }
+      }).then(function (resp) {
         $scope.clusterState = resp;
         console.log(resp);
         $scope.error = null;
