@@ -8,7 +8,7 @@
  * Controller of the pokestackApp
  */
 angular.module('pokestackApp')
-  .controller('SearchCtrl', ['$route', '$scope', 'elasticService', 'esFactory', function ($route, $scope, elasticService, esFactory) {
+  .controller('SearchCtrl', ['$route', '$scope', 'elasticService', 'esFactory', '$location', function ($route, $scope, elasticService, esFactory, $location) {
 
     $scope.loading = true;
 
@@ -30,8 +30,6 @@ angular.module('pokestackApp')
 		
   	}
   	else{
-		//TODO Show the categories of the home page as there is no character in the search form
-		$scope.loading = false;
-		$scope.noresults = true;
+		$location.path('/')
   	}
 }]);
