@@ -27,7 +27,7 @@ angular.module('pokestackApp')
         }
       })
       .catch(function (err) {
-        //Catch the error
+        //TODO Handle the error
         $scope.loading = false;
       });
 }]);
