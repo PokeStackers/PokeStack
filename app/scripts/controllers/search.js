@@ -62,5 +62,6 @@ angular.module('pokestackApp')
   	else{
 		//TODO Show the categories of the home page as there is no character in the search form
 		$scope.loading = false;
+		$scope.noresults = true;
   	}
 }]);
