@@ -9,10 +9,11 @@
  */
 
 angular.module('pokestackApp')
-  .controller('CategoryCtrl', ['$route', '$scope', 'searchService', 'esFactory', function ($route, $scope, searchService, esFactory) {
-
+  .controller('CategoryCtrl', ['$route', '$scope', '$filter', 'categoriesData', 'searchService', 'esFactory', function ($route, $scope, $filter, categoriesData, searchService, esFactory) {
 
       $scope.loading = true;
+      $scope.categoryName = $route.current.params.categoryName;
+      $scope.class = "fa " + $filter('icon')(categoriesData, $scope.categoryName);
 
       searchService.search({
 	    index: 'pokestack',
