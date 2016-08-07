@@ -43,4 +43,8 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+  }).run(function($rootScope, $location, analyticsService) {
+    $rootScope.$on('$routeChangeSuccess', function() {
+      analyticsService.recordPageview($location.url());
+    });
   });
